@@ -29,19 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <SidebarProvider defaultOpen={false}>
-
-      <AppSidebar />
-      <main>
-
-      <SidebarTrigger />
-
-        {children}
-
-        <Toaster />
+        <main>
+          {children}
+          <Toaster />
         </main>
-      </SidebarProvider>
-        </body>
+      </body>
     </html>
   );
 }
