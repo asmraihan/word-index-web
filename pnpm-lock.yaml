@@ -65,6 +65,9 @@ importers:
       drizzle-orm:
         specifier: ^0.39.3
         version: 0.39.3(@types/pg@8.11.11)(pg@8.13.3)
+      drizzle-zod:
+        specifier: ^0.7.0
+        version: 0.7.0(drizzle-orm@0.39.3(@types/pg@8.11.11)(pg@8.13.3))(zod@3.24.2)
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.0.0)
@@ -1361,6 +1364,12 @@ packages:
         optional: true
       sqlite3:
         optional: true
+
+  drizzle-zod@0.7.0:
+    resolution: {integrity: sha512-xgCRYYVEzRkeXTS33GSMgoowe3vKsMNBjSI+cwG1oLQVEhAWWbqtb/AAMlm7tkmV4fG/uJjEmWzdzlEmTgWOoQ==}
+    peerDependencies:
+      drizzle-orm: '>=0.36.0'
+      zod: '>=3.0.0'
 
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
@@ -3154,6 +3163,11 @@ snapshots:
     optionalDependencies:
       '@types/pg': 8.11.11
       pg: 8.13.3
+
+  drizzle-zod@0.7.0(drizzle-orm@0.39.3(@types/pg@8.11.11)(pg@8.13.3))(zod@3.24.2):
+    dependencies:
+      drizzle-orm: 0.39.3(@types/pg@8.11.11)(pg@8.13.3)
+      zod: 3.24.2
 
   eastasianwidth@0.2.0: {}
 

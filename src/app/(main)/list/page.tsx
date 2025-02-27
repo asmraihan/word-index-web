@@ -2,11 +2,11 @@
 "use client"
 
 import { useState } from 'react'
-import { 
+import {
   ArrowDownAZ,
   ArrowUpAZ,
   SlidersHorizontal,
- } from 'lucide-react';
+} from 'lucide-react';
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -21,6 +21,7 @@ import { Separator } from '@/components/ui/separator'
 import { Header } from '@/components/header'
 import { Main } from '@/components/main'
 import ThemeToggle from '@/components/theme-toggle';
+import Link from 'next/link';
 // import { ProfileDropdown } from '@/components/profile-dropdown'
 // import { Search } from '@/components/search'
 
@@ -93,7 +94,7 @@ export default function Apps() {
   return (
     <>
       {/* ===== Top Heading ===== */}
-    
+
 
       {/* ===== Content ===== */}
       <Main fixed>
@@ -124,28 +125,37 @@ export default function Apps() {
               </SelectContent>
             </Select>
           </div>
+          <div className='flex items-center gap-4'>
 
-          <Select value={sort} onValueChange={setSort}>
-            <SelectTrigger className='w-16'>
-              <SelectValue>
-                <SlidersHorizontal size={18} />
-              </SelectValue>
-            </SelectTrigger>
-            <SelectContent align='end'>
-              <SelectItem value='ascending'>
-                <div className='flex items-center gap-4'>
-                  <ArrowDownAZ size={16}/>
-                  <span>Ascending</span>
-                </div>
-              </SelectItem>
-              <SelectItem value='descending'>
-                <div className='flex items-center gap-4'>
-                  <ArrowUpAZ size={16}/>
-                  <span>Descending</span>
-                </div>
-              </SelectItem>
-            </SelectContent>
-          </Select>
+            <Select value={sort} onValueChange={setSort}>
+              <SelectTrigger className='w-16'>
+                <SelectValue>
+                  <SlidersHorizontal size={18} />
+                </SelectValue>
+              </SelectTrigger>
+              <SelectContent align='end'>
+                <SelectItem value='ascending'>
+                  <div className='flex items-center gap-4'>
+                    <ArrowDownAZ size={16} />
+                    <span>Ascending</span>
+                  </div>
+                </SelectItem>
+                <SelectItem value='descending'>
+                  <div className='flex items-center gap-4'>
+                    <ArrowUpAZ size={16} />
+                    <span>Descending</span>
+                  </div>
+                </SelectItem>
+              </SelectContent>
+            </Select>
+
+            <Button variant='default' className='hidden sm:block'>
+              <Link href='/create'>
+              Add Word
+              </Link>
+            </Button>
+          </div>
+
         </div>
         <Separator className='shadow' />
         <ul className='faded-bottom no-scrollbar grid gap-4 overflow-auto pb-16 pt-4 md:grid-cols-2 lg:grid-cols-3'>

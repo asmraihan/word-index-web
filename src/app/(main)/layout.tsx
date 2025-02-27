@@ -16,22 +16,14 @@ export default function MainLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <main>
+    <>
       <SidebarProvider defaultOpen={false}>
-      <AppSidebar />
-      {/* <SidebarTrigger /> */}
-      <div className='flex flex-col h-screen'>
-       {/* ===== Top Heading ===== */}
-            <Header className='flex justify-between w-full'>
-              {/* <Search /> */}
-              <div className='ml-auto flex items-center gap-4'>
-                <ThemeToggle />
-                {/* <ProfileDropdown /> */}
-              </div>
-            </Header>
-        {children}
-        </div>
+        <AppSidebar />
+          <div className='flex flex-col h-screen w-full'>
+          <Header />
+          {children}
+          </div>
       </SidebarProvider>
-        </main>
+    </>
   );
 }
